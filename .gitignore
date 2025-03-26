@@ -1,0 +1,63 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyCharm IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Build and distribution folders
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# VSCode (if also used)
+.vscode/
+
+# PyCharm workspace settings (if any)
+workspace.xml
+
+# Environment variables
+.env
+.env.local
+
+# Debug logs
+*.log
+
+# MyPy cache
+.mypy_cache/
+
+# PyInstaller output
+__pyinstaller/
