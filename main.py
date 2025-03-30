@@ -9,3 +9,6 @@ if __name__ == '__main__':
     phone_regex = Patterns.phone_international()
     print("Phone regex:", phone_regex.pattern)
     print("Match +36-101111111:", bool(phone_regex.match("+36-101111111")))
+
+    test = RegexKit().start().digit().at_least(3).compile()
+    print("Match 123", bool(test.match('123')))
