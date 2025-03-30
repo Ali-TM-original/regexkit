@@ -1,16 +1,11 @@
-# This is a sample Python script.
+from regexkit import RegexKit
+from regexkit import Patterns
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    email_regex = Patterns.email()
+    print("Email regex:", email_regex.pattern)
+    print("Match test@example.com:", bool(email_regex.match("test@example.com")))
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    phone_regex = Patterns.phone_international()
+    print("Phone regex:", phone_regex.pattern)
+    print("Match +36-101111111:", bool(phone_regex.match("+36-101111111")))
