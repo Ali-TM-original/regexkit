@@ -17,10 +17,13 @@ class TestPatterns:
         email = self.pattern.email()
         assert bool(email.match("another@another.com")) == True
 
-    # URL REGEX IS MESSED UP
-    # def test_url(self):
-    #     url = self.pattern.url()
-    #     assert  bool(url.match("https://www.youtube.com/")) == True
+    def test_url_1(self):
+        url = self.pattern.url()
+        assert  bool(url.match("https://www.elte.hu/")) == True
+
+    def test_url_2(self):
+        url = self.pattern.url()
+        assert  bool(url.match("https://www.youtube.com/")) == True
 
     def test_international_number1(self):
         number = self.pattern.phone_international()
