@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a604ef8f-80fd-4bf8-b327-c7d9b539b29b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regexkit/patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/regexkit/patterns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_patterns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +40,11 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Feature-Patterns&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/shahz/Desktop/regexkit/docs/cool.png&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python tests.Python tests for test_patterns.TestPatterns">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="regexkit" />
       <option name="ENV_FILES" value="" />
@@ -99,8 +99,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_patterns.TestPatterns" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Python tests for test_patterns.TestPatterns" />
         <item itemvalue="Python tests.Python tests for test_patterns.TestPatterns.test_url" />
       </list>
     </recent_temporary>
