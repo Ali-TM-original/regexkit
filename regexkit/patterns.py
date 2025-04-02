@@ -1,5 +1,6 @@
 from .regexkit import RegexKit
 
+
 class Patterns:
     @staticmethod
     def email():
@@ -48,7 +49,6 @@ class Patterns:
             .compile()
         )
 
-
     @staticmethod
     def phone_international():
         """
@@ -70,7 +70,7 @@ class Patterns:
         """
         validates patterns that may include _ and – having a length of 3 to 16 characters –
         """
-        return(
+        return (
             RegexKit()
             .start()
             .char_from("a-zA-Z0-9_-").between(3, 16)
@@ -90,6 +90,71 @@ class Patterns:
             .digit().between(1, 3).literal(".")
             .digit().between(1, 3)
             .end_group()
+            .end()
+            .compile()
+        )
+
+    @staticmethod
+    def passport():
+        """
+            Validates Passport Numbers
+        """
+        return (
+            RegexKit()
+            .start()
+            .char_from("A-PR-WY")
+            .digit().char_not_from("0")
+            .digit()
+            .whitespace().optional()
+            .digit().exactly(4)
+            .digit().char_not_from("0")
+            .end()
+            .compile()
+        )
+
+    @staticmethod
+    def duplicate_word():
+        """
+            Validates if there are duplicate words in a string
+        """
+        return (
+            RegexKit().group(capturing=True)
+            .word_boundary()
+            .word_char().one_or_more()
+            .word_boundary()
+            .end_group()
+            .followed_by(r".*\b\1\b")
+            .compile()
+        )
+
+    @staticmethod
+    def html_tag():
+        """
+            validates if html tags are in a string
+        """
+        return (
+            RegexKit().literal('<')
+            .optional('/')
+            .word_char().one_or_more()
+            .whitespace().zero_or_more()
+            .any_char().zero_or_more(lazy=True)
+            .literal('>')
+            .compile()
+        )
+
+    @staticmethod
+    def date():
+        """
+            validates if a date is in format DD.MMM.YYYY | DD-MMM-YYYY | DD/MMM/YYYY
+        """
+        return (
+            RegexKit()
+            .start()
+            .digit().exactly(2)
+            .char_from("-/.")
+            .char_from("a-zA-Z").exactly(3)
+            .char_from("-/.")
+            .digit().exactly(4)
             .end()
             .compile()
         )
