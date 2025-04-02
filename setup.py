@@ -8,6 +8,7 @@ setup(
     version="0.1",
     description="simplify the creation of regular expressions using a fluent interface",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     packages=find_packages(),
     url="https://github.com/Ali-TM-original/regexkit",
     author="Ali-TM-original",

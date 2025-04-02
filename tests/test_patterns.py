@@ -32,3 +32,19 @@ class TestPatterns:
     def test_international_number2(self):
         number = self.pattern.phone_international()
         assert bool(number.match("+37-123123123")) == True
+
+    def test_username1(self):
+        uname = self.pattern.username()
+        assert bool(uname.match("hello-123")) == True
+
+    def test_username2(self):
+        uname = self.pattern.username()
+        assert bool(uname.match("Al1_1s_C00L")) == True
+
+    def test_ipv4_1(self):
+        ipv4 = self.pattern.ipv4()
+        assert bool(ipv4.match("192.168.0.1")) == True
+
+    def test_ipv4_2(self):
+        ipv4 = self.pattern.ipv4()
+        assert bool(ipv4.match("10.10.10.10")) == True
