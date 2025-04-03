@@ -12,6 +12,13 @@ This module defines common regex patterns using RegexKit.
 - **email()**: Returns a compiled regex pattern for validating email addresses.
 - **url()**: Returns a compiled regex pattern for validating URLs.
 - **phone_international()**: Returns a compiled regex pattern for international phone numbers.
+- **username()**: Returns a compiled regex pattern for usernames that may include _ and – having a length of 3 to 16 characters.
+- **ipv4()**: Returns a compiled regex pattern for IPv4 addresses.
+- **passport()**: Returns a compiled regex pattern for passport numbers.
+- **duplicate_word()**: Returns a compiled regex pattern to find if there are duplicate words in a string.
+- **html_tag()**: Returns a compiled regex pattern to find if there are html tags in a string
+- **date()**: Returns a compiled regex pattern for dates in the following format DD.MMM.YYYY | DD-MMM-YYYY | DD/MMM/YYYY
+
 
 #### Example Usage:
 
@@ -122,6 +129,8 @@ print(bool(email_regex.match("test@domain.com")))  # Output: True
 The .optional() method ensures that certain elements in a pattern are not mandatory.
 Example:
 ```python
+from regexkit import RegexKit
+
 pattern = RegexKit().literal("http").literal("s").optional().literal("://").compile()
 print(bool(pattern.match("https://")))  # Output: True
 print(bool(pattern.match("http://")))   # Output: True
