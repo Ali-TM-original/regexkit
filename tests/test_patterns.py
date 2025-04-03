@@ -65,20 +65,20 @@ class TestPatterns:
 
     def test_date1(self):
         d = self.pattern.date()
-        assert  bool(d.match("12-Jan-2025")) == True
+        assert bool(d.match("12-Jan-2025")) == True
 
     def test_date2(self):
         d = self.pattern.date()
-        assert  bool(d.match("03/Feb/1999")) == True
+        assert bool(d.match("03/Feb/1999")) == True
 
     def test_date3(self):
         d = self.pattern.date()
-        assert  bool(d.match("25.Mar.2020")) == True
+        assert bool(d.match("25.Mar.2020")) == True
 
     def test_date4(self):
         d = self.pattern.date()
-        assert  bool(d.match("5-Apr-2023")) == False
+        assert bool(d.match("5-Apr-2023")) == False
 
     def test_date5(self):
         d = self.pattern.date()
-        assert  bool(d.match("12-APRIL-2025")) == False
+        assert bool(d.match("12-APRIL-2025")) == False

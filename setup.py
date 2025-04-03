@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-with open('README.md') as f:
+with open("README.md", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
@@ -11,6 +11,11 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     url="https://github.com/Ali-TM-original/regexkit",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
     author="Ali-TM-original",
     license="MIT",
     zip_safe=False,

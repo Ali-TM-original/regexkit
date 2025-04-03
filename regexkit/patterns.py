@@ -10,16 +10,20 @@ class Patterns:
         return (
             RegexKit()
             .start()
-            .word_char().one_or_more()
-            .literal('@')
-            .word_char().one_or_more()
+            .word_char()
+            .one_or_more()
+            .literal("@")
+            .word_char()
+            .one_or_more()
             .group(False)
-            .literal('.')
-            .word_char().one_or_more()
+            .literal(".")
+            .word_char()
+            .one_or_more()
             .end_group()
             .zero_or_more()
-            .literal('.')
-            .char_from('a-zA-Z').at_least(2)
+            .literal(".")
+            .char_from("a-zA-Z")
+            .at_least(2)
             .end()
             .case_insensitive()
             .compile()
@@ -34,16 +38,22 @@ class Patterns:
             RegexKit()
             .start()
             .group(capturing=True)
-            .literal("http").optional()
-            .literal("s").optional()
+            .literal("http")
+            .optional()
+            .literal("s")
+            .optional()
             .literal("://")
-            .char_from("a-zA-Z0-9").one_or_more()
+            .char_from("a-zA-Z0-9")
+            .one_or_more()
             .literal(".")
-            .char_from("a-zA-Z").one_or_more()
+            .char_from("a-zA-Z")
+            .one_or_more()
             .end_group()
             .group(capturing=False)
-            .literal("/").optional()
-            .char_from("a-zA-Z0-9_/?.=&%-").zero_or_more()
+            .literal("/")
+            .optional()
+            .char_from("a-zA-Z0-9_/?.=&%-")
+            .zero_or_more()
             .end_group()
             .end()
             .compile()
@@ -57,10 +67,12 @@ class Patterns:
         return (
             RegexKit()
             .start()
-            .literal('+')
-            .digit().between(1, 3)
-            .literal('-')
-            .digit().between(3, 14)
+            .literal("+")
+            .digit()
+            .between(1, 3)
+            .literal("-")
+            .digit()
+            .between(3, 14)
             .end()
             .compile()
         )
@@ -71,11 +83,7 @@ class Patterns:
         validates patterns that may include _ and – having a length of 3 to 16 characters –
         """
         return (
-            RegexKit()
-            .start()
-            .char_from("a-zA-Z0-9_-").between(3, 16)
-            .end()
-            .compile()
+            RegexKit().start().char_from("a-zA-Z0-9_-").between(3, 16).end().compile()
         )
 
     @staticmethod
@@ -85,10 +93,17 @@ class Patterns:
             RegexKit()
             .start()
             .group(False)
-            .digit().between(1, 3).literal(".")
-            .digit().between(1, 3).literal(".")
-            .digit().between(1, 3).literal(".")
-            .digit().between(1, 3)
+            .digit()
+            .between(1, 3)
+            .literal(".")
+            .digit()
+            .between(1, 3)
+            .literal(".")
+            .digit()
+            .between(1, 3)
+            .literal(".")
+            .digit()
+            .between(1, 3)
             .end_group()
             .end()
             .compile()
@@ -97,17 +112,21 @@ class Patterns:
     @staticmethod
     def passport():
         """
-            Validates Passport Numbers
+        Validates Passport Numbers
         """
         return (
             RegexKit()
             .start()
             .char_from("A-PR-WY")
-            .digit().char_not_from("0")
             .digit()
-            .whitespace().optional()
-            .digit().exactly(4)
-            .digit().char_not_from("0")
+            .char_not_from("0")
+            .digit()
+            .whitespace()
+            .optional()
+            .digit()
+            .exactly(4)
+            .digit()
+            .char_not_from("0")
             .end()
             .compile()
         )
@@ -115,12 +134,14 @@ class Patterns:
     @staticmethod
     def duplicate_word():
         """
-            Validates if there are duplicate words in a string
+        Validates if there are duplicate words in a string
         """
         return (
-            RegexKit().group(capturing=True)
+            RegexKit()
+            .group(capturing=True)
             .word_boundary()
-            .word_char().one_or_more()
+            .word_char()
+            .one_or_more()
             .word_boundary()
             .end_group()
             .followed_by(r".*\b\1\b")
@@ -130,31 +151,38 @@ class Patterns:
     @staticmethod
     def html_tag():
         """
-            validates if html tags are in a string
+        validates if html tags are in a string
         """
         return (
-            RegexKit().literal('<')
-            .optional('/')
-            .word_char().one_or_more()
-            .whitespace().zero_or_more()
-            .any_char().zero_or_more(lazy=True)
-            .literal('>')
+            RegexKit()
+            .literal("<")
+            .optional("/")
+            .word_char()
+            .one_or_more()
+            .whitespace()
+            .zero_or_more()
+            .any_char()
+            .zero_or_more(lazy=True)
+            .literal(">")
             .compile()
         )
 
     @staticmethod
     def date():
         """
-            validates if a date is in format DD.MMM.YYYY | DD-MMM-YYYY | DD/MMM/YYYY
+        validates if a date is in format DD.MMM.YYYY | DD-MMM-YYYY | DD/MMM/YYYY
         """
         return (
             RegexKit()
             .start()
-            .digit().exactly(2)
+            .digit()
+            .exactly(2)
             .char_from("-/.")
-            .char_from("a-zA-Z").exactly(3)
+            .char_from("a-zA-Z")
+            .exactly(3)
             .char_from("-/.")
-            .digit().exactly(4)
+            .digit()
+            .exactly(4)
             .end()
             .compile()
         )
