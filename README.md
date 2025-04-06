@@ -7,7 +7,15 @@
 RegexKit is a Python library that simplifies the creation of regular expressions using a fluent interface. It provides an intuitive way to construct complex regex patterns without manually writing raw regular expressions.
 
 ## Installation
-``Note: for now the package has not been uploaded to pypi``
+Fow Windows
+``
+pip install regexkit
+``
+for mac or linux
+``
+pip3 install regexkit
+``
+
 Ensure you have Python installed, then import the RegexKit module into your project.
 
 ## Purpose
